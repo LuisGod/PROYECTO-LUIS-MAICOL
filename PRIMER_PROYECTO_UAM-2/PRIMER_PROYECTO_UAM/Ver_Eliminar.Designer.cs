@@ -64,6 +64,7 @@
             this.r_apellido.TabStop = true;
             this.r_apellido.Text = "Busqueda por Apellido";
             this.r_apellido.UseVisualStyleBackColor = true;
+            this.r_apellido.CheckedChanged += new System.EventHandler(this.r_apellido_CheckedChanged);
             // 
             // r_ced
             // 

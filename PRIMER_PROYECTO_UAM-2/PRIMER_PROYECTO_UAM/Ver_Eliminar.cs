@@ -31,7 +31,7 @@ namespace PRIMER_PROYECTO_UAM
 
             if (r_ced.Checked == true)
             {
-                ver.Buscar= txtcedula.Text;
+                ver.Buscar = txtcedula.Text;
                 ver.buscarcedula(dataeliminar);
             }
             else if (r_apellido.Checked == true)
@@ -101,13 +101,25 @@ namespace PRIMER_PROYECTO_UAM
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ver.eliminar(dataeliminar);
+            
             ver.eliminar(dataeliminar);
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnbuscar_Click(object sender, EventArgs e)
+        {
+           
+
+
+        }
+
+        private void r_apellido_CheckedChanged(object sender, EventArgs e)
+        {
+            ver.buscarapellido(dataeliminar);
         }
     }
 }

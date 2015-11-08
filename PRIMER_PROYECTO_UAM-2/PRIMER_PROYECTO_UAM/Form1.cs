@@ -35,7 +35,7 @@ namespace PRIMER_PROYECTO_UAM
             cmbprovincia.DisplayMember = "PROVINCIA";
             cmbprovincia.ValueMember = "IDPROVINCIAS";
             ///////////////////////////////////////////////////////////////////////////////
-            
+
             List<GeneroBE> lista = new List<GeneroBE>();
 
             GeneroController generocontrola = new GeneroController();
@@ -52,6 +52,7 @@ namespace PRIMER_PROYECTO_UAM
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             if (txtnombre.Text == "")
             {
                 MessageBox.Show("Digite un Nombre para Continuar");
@@ -72,64 +73,87 @@ namespace PRIMER_PROYECTO_UAM
                 MessageBox.Show("Digite Direccion para Continuar");
                 txtdireccion.Focus();
             }
-           
+
             else if (txtexaminar.Text == "")
             {
                 MessageBox.Show("Cargue una fotografia para Continuar");
                 btnbuscarfoto.Focus();
 
             }
+
             else
             {
-                //almacenar////////////////////////////////////////////////////////7
-                Conexion myconexion = new Conexion();
-                SqlConnection conexion = myconexion.CreateConnection();
-                SqlCommand comando = myconexion.CreateCommand(conexion);
-
-                //pasos
-                FileStream stream = new FileStream(txtexaminar.Text, FileMode.Open, FileAccess.Read);
-                //Se inicailiza un flujo de archivo con la imagen seleccionada desde el disco.
-                BinaryReader br = new BinaryReader(stream);
-                FileInfo fi = new FileInfo(txtexaminar.Text);
-
-                //Se inicializa un arreglo de Bytes del tamaño de la imagen
-                byte[] binData = new byte[stream.Length];
-                //Se almacena en el arreglo de bytes la informacion que se obtiene del flujo de archivos(foto)
-                //Lee el bloque de bytes del flujo y escribe los datos en un búfer dado.
-                stream.Read(binData, 0, Convert.ToInt32(stream.Length));
-
-                ////Se muetra la imagen obtenida desde el flujo de datos
-                picfoto.Image = Image.FromStream(stream);
-                conexion.Open();
-                comando.CommandText = "REGISTRAR_CLIENTE";
-                comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@NOMBRES", txtnombre.Text.ToString());
-                comando.Parameters.AddWithValue("@APELLIDOS", txtapellido.Text.ToString());
-                comando.Parameters.AddWithValue("@DNI", txtcedula.Text.ToString());
-                comando.Parameters.AddWithValue("@EDAD",numedad.Text.ToString());
-                comando.Parameters.AddWithValue("@DIRECCION", txtdireccion.Text);
-                comando.Parameters.AddWithValue("@PROVINCIA", cmbprovincia.Text);
-                comando.Parameters.AddWithValue("@GENERO", cmbgenero.Text);
-                comando.Parameters.AddWithValue("@FOTO", binData);
-
-                int result = comando.ExecuteNonQuery();
-                if (result > 0)
-                    MessageBox.Show("!!!!!DATOS ALMACENADOS CORRECTAMENTE¡¡¡¡¡");
-                else
-                    MessageBox.Show("INSERCIÓN FALLO");
-                conexion.Close();
-
-                txtnombre.Clear();
-                
-                txtapellido.Clear();
-                txtdireccion.Clear();
-                picfoto.Image = null;
-                txtcedula.Clear();
-
-                txtnombre.Focus();
+                REGISTRARCLIENTE();
 
             }
         }
+
+                //almacenar////////////////////////////////////////////////////////7
+        public bool  REGISTRARCLIENTE()
+        {
+           ClienteBE  REGISTRAR_CLIENTE = new ClienteBE();
+
+            bool resulta = false;
+            try
+            {
+                    Conexion myconexion = new Conexion();
+                    SqlConnection conexion = myconexion.CreateConnection();
+                    SqlCommand comando = myconexion.CreateCommand(conexion);
+
+                    //pasos
+                    FileStream stream = new FileStream(txtexaminar.Text, FileMode.Open, FileAccess.Read);
+                    //Se inicailiza un flujo de archivo con la imagen seleccionada desde el disco.
+                    BinaryReader br = new BinaryReader(stream);
+                    FileInfo fi = new FileInfo(txtexaminar.Text);
+
+                    //Se inicializa un arreglo de Bytes del tamaño de la imagen
+                    byte[] binData = new byte[stream.Length];
+                    //Se almacena en el arreglo de bytes la informacion que se obtiene del flujo de archivos(foto)
+                    //Lee el bloque de bytes del flujo y escribe los datos en un búfer dado.
+                    stream.Read(binData, 0, Convert.ToInt32(stream.Length));
+
+                    ////Se muetra la imagen obtenida desde el flujo de datos
+                    ClienteBE cliente = new ClienteBE();
+
+
+                    picfoto.Image = Image.FromStream(stream);
+                    conexion.Open();
+                    comando.CommandText = "REGISTRAR_CLIENTE";
+                    comando.CommandType = CommandType.StoredProcedure;
+                    comando.Parameters.AddWithValue("@NOMBRES",txtnombre.Text.ToString());    //;
+                    comando.Parameters.AddWithValue("@APELLIDOS", txtapellido.Text.ToString());
+                    comando.Parameters.AddWithValue("@DNI", txtcedula.Text.ToString());
+                    comando.Parameters.AddWithValue("@EDAD", numedad.Text.ToString());
+                    comando.Parameters.AddWithValue("@DIRECCION", txtdireccion.Text);
+                    comando.Parameters.AddWithValue("@PROVINCIA", cmbprovincia.Text);
+                    comando.Parameters.AddWithValue("@GENERO", cmbgenero.Text);
+                    comando.Parameters.AddWithValue("@FOTO", binData);
+
+                    int result = comando.ExecuteNonQuery();
+                    if (result > 0)
+                        MessageBox.Show("!!!!!DATOS ALMACENADOS CORRECTAMENTE¡¡¡¡¡");
+                    else
+                        MessageBox.Show("INSERCIÓN FALLO");
+                    conexion.Close();
+
+                    txtnombre.Clear();
+
+                    txtapellido.Clear();
+                    txtdireccion.Clear();
+                    picfoto.Image = null;
+                    txtcedula.Clear();
+                    txtnombre.Focus();
+                }
+            catch (SqlException e)
+            {
+                //insert error in a log
+                resulta = false;
+            }
+            return resulta;
+            
+        }
+            
+        
 
         private void btnbuscarfoto_Click(object sender, EventArgs e)
         {
@@ -149,3 +173,4 @@ namespace PRIMER_PROYECTO_UAM
         }
     }
 }
+

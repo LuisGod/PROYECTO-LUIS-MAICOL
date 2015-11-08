@@ -40,6 +40,7 @@
             this.txtdirección = new System.Windows.Forms.TextBox();
             this.cmbprovincia = new System.Windows.Forms.ComboBox();
             this.btneditar = new System.Windows.Forms.Button();
+            this.btnbuscar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -145,11 +146,21 @@
             this.btneditar.UseVisualStyleBackColor = true;
             this.btneditar.Click += new System.EventHandler(this.btneditar_Click);
             // 
+            // btnbuscar
+            // 
+            this.btnbuscar.Location = new System.Drawing.Point(249, 265);
+            this.btnbuscar.Name = "btnbuscar";
+            this.btnbuscar.Size = new System.Drawing.Size(94, 27);
+            this.btnbuscar.TabIndex = 13;
+            this.btnbuscar.Text = "Buscar";
+            this.btnbuscar.UseVisualStyleBackColor = true;
+            // 
             // Consultar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(414, 331);
+            this.Controls.Add(this.btnbuscar);
             this.Controls.Add(this.btneditar);
             this.Controls.Add(this.cmbprovincia);
             this.Controls.Add(this.txtdirección);
@@ -184,5 +195,6 @@
         private System.Windows.Forms.TextBox txtdirección;
         private System.Windows.Forms.ComboBox cmbprovincia;
         private System.Windows.Forms.Button btneditar;
+        private System.Windows.Forms.Button btnbuscar;
     }
 }

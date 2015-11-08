@@ -70,6 +70,14 @@ namespace PRIMER_PROYECTO_UAM
             get { return foto; }
             set { foto = value; }
         }
+
+        private string gENERO;
+
+        public string GENERO
+        {
+            get { return gENERO; }
+            set { gENERO = value; }
+        }
        
     }
 }
