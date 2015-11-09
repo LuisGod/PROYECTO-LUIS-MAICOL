@@ -11,7 +11,7 @@ namespace PRIMER_PROYECTO_UAM
     public class Conexion
     {
 
-        private string sqlConnection = "Data Source=LUIS\\SQLEXPRESS2012;Initial Catalog=PROYECTO_UAM_technologies;Integrated Security=True";
+        private string sqlConnection = "Data Source=MIKE-PC\\SQLEXPRESS;Initial Catalog=PROYECTO_UAM_technologies;Integrated Security=True";
 
        
 

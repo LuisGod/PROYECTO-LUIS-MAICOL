@@ -34,6 +34,7 @@ namespace PRIMER_PROYECTO_UAM
             cmbprovincia.DataSource = provinciasourse;
             cmbprovincia.DisplayMember = "PROVINCIA";
             cmbprovincia.ValueMember = "IDPROVINCIAS";
+           
             ///////////////////////////////////////////////////////////////////////////////
 
             List<GeneroBE> lista = new List<GeneroBE>();
@@ -167,10 +168,7 @@ namespace PRIMER_PROYECTO_UAM
             picfoto.Image = Image.FromFile(examinar.FileName);
         }
 
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }
 

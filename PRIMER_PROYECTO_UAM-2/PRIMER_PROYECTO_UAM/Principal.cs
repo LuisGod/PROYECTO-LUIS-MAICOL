@@ -36,6 +36,16 @@ namespace PRIMER_PROYECTO_UAM
 
         }
 
+        private void btnrgscondu_Click(object sender, EventArgs e)
+        {
+            Agrega_Conductor agrr = new Agrega_Conductor();
+            agrr.Show();
+        }
+
+       
+
+        
+
         }
     }
 
