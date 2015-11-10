@@ -8,10 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using System.Data.SqlClient;
+
 namespace PRIMER_PROYECTO_UAM
 {
     public partial class Ver_Eliminar : Form
     {
+      
+        ClienteController ManipularDatos = new ClienteController();
+        private string buscar;
+        public string Buscar
+        {
+            get { return buscar; }
+            set { buscar = value; }
+        }
         public Ver_Eliminar()
         {
             InitializeComponent();
@@ -25,6 +35,8 @@ namespace PRIMER_PROYECTO_UAM
             ver.listarclientes(dataeliminar);
 
         }
+
+
 
         private void txtcedula_TextChanged(object sender, EventArgs e)
         {
@@ -40,6 +52,7 @@ namespace PRIMER_PROYECTO_UAM
                 ver.buscarapellido(dataeliminar);
             }
         }
+
         private void txtbuscar_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (r_ced.Checked == true)
@@ -84,6 +97,9 @@ namespace PRIMER_PROYECTO_UAM
             }
         }
 
+
+
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -101,7 +117,7 @@ namespace PRIMER_PROYECTO_UAM
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
             ver.eliminar(dataeliminar);
         }
 
@@ -112,7 +128,7 @@ namespace PRIMER_PROYECTO_UAM
 
         private void btnbuscar_Click(object sender, EventArgs e)
         {
-           
+
 
 
         }
@@ -121,5 +137,41 @@ namespace PRIMER_PROYECTO_UAM
         {
             ver.buscarapellido(dataeliminar);
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnactualizar_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+
+
+
+
+        }
+
+        private void btnact_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+
+
+
+
+
     }
 }
+
+

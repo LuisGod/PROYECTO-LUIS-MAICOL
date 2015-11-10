@@ -90,11 +90,12 @@
             // dataeliminar
             // 
             this.dataeliminar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataeliminar.Location = new System.Drawing.Point(12, 196);
+            this.dataeliminar.Location = new System.Drawing.Point(3, 179);
+            this.dataeliminar.Margin = new System.Windows.Forms.Padding(5);
             this.dataeliminar.Name = "dataeliminar";
             this.dataeliminar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataeliminar.Size = new System.Drawing.Size(953, 223);
-            this.dataeliminar.TabIndex = 1;
+            this.dataeliminar.Size = new System.Drawing.Size(1026, 183);
+            this.dataeliminar.TabIndex = 37;
             this.dataeliminar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label1
@@ -103,7 +104,7 @@
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 1);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(975, 122);
+            this.label1.Size = new System.Drawing.Size(1046, 122);
             this.label1.TabIndex = 2;
             this.label1.Text = "LISTA DE CLIENTES";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -111,18 +112,19 @@
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.label2.Location = new System.Drawing.Point(0, 120);
+            this.label2.Location = new System.Drawing.Point(0, 123);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(978, 320);
+            this.label2.Size = new System.Drawing.Size(1049, 256);
             this.label2.TabIndex = 3;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Coral;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(444, 128);
+            this.button1.Location = new System.Drawing.Point(459, 138);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(148, 43);
+            this.button1.Size = new System.Drawing.Size(119, 25);
             this.button1.TabIndex = 4;
             this.button1.Text = "ELIMINAR CLIENTE";
             this.button1.UseVisualStyleBackColor = false;
@@ -132,7 +134,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(977, 431);
+            this.ClientSize = new System.Drawing.Size(1049, 379);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataeliminar);
