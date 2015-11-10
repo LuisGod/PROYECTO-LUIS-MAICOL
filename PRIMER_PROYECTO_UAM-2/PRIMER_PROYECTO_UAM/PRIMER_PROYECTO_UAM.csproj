@@ -44,8 +44,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Agrega_Conductor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agrega_Conductor.Designer.cs">
+      <DependentUpon>Agrega_Conductor.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClienteBE.cs" />
     <Compile Include="ClienteController.cs" />
+    <Compile Include="ConductorBE.cs" />
+    <Compile Include="ConductorController.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="Consultar.cs">
       <SubType>Form</SubType>
@@ -77,6 +85,9 @@
     <Compile Include="Ver_Eliminar.Designer.cs">
       <DependentUpon>Ver_Eliminar.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Agrega_Conductor.resx">
+      <DependentUpon>Agrega_Conductor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consultar.resx">
       <DependentUpon>Consultar.cs</DependentUpon>
     </EmbeddedResource>

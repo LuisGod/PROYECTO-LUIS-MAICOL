@@ -34,6 +34,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.bTNCONSULTAR = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnrgscondu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,19 +68,18 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackColor = System.Drawing.Color.Coral;
             this.pictureBox1.Image = global::PRIMER_PROYECTO_UAM.Properties.Resources.Group4_Meeting_Light;
-            this.pictureBox1.Location = new System.Drawing.Point(28, -2);
+            this.pictureBox1.Location = new System.Drawing.Point(3, -2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 87);
+            this.pictureBox1.Size = new System.Drawing.Size(85, 89);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
             // label2
             // 
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.label2.Location = new System.Drawing.Point(2, 88);
+            this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(492, 292);
-            this.label2.TabIndex = 3;
+            this.label2.Size = new System.Drawing.Size(100, 23);
+            this.label2.TabIndex = 6;
             // 
             // bTNCONSULTAR
             // 
@@ -105,12 +105,25 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnrgscondu
+            // 
+            this.btnrgscondu.BackColor = System.Drawing.Color.Coral;
+            this.btnrgscondu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnrgscondu.Location = new System.Drawing.Point(132, 130);
+            this.btnrgscondu.Name = "btnrgscondu";
+            this.btnrgscondu.Size = new System.Drawing.Size(156, 40);
+            this.btnrgscondu.TabIndex = 7;
+            this.btnrgscondu.Text = "REGISTRAR CONDUCTORES";
+            this.btnrgscondu.UseVisualStyleBackColor = false;
+            this.btnrgscondu.Click += new System.EventHandler(this.btnrgscondu_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(498, 381);
+            this.BackColor = System.Drawing.Color.LightSalmon;
+            this.ClientSize = new System.Drawing.Size(564, 383);
+            this.Controls.Add(this.btnrgscondu);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.bTNCONSULTAR);
             this.Controls.Add(this.pictureBox1);
@@ -132,5 +145,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button bTNCONSULTAR;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnrgscondu;
     }
 }
